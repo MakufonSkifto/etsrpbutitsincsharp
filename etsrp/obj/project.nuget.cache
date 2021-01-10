@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "taj2LJO3YFhj6TJ7tmTnBzYWDo24/hqoh8+57W8i9bqjuL7ZyG3uYBGk0fetNo0hS5NKFS0Vgl8o9dUFd9Q4kA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\emirs\\RiderProjects\\etsrp\\etsrp\\etsrp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\emirs\\.nuget\\packages\\discordrichpresence\\1.0.169\\discordrichpresence.1.0.169.nupkg.sha512",
+    "C:\\Users\\emirs\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\emirs\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\emirs\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\emirs\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
+    "C:\\Users\\emirs\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
