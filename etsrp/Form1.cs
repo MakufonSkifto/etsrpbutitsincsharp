@@ -46,8 +46,8 @@ namespace etsrp
                     var details = JObject.Parse(reader.ReadLine());
                     label2.Text = "ETS Telemetry Server Connection Status: Connected ✅";
                     label2.ForeColor = Color.ForestGreen;
-                    
-                    
+
+                    client.Initialize();
                     List<string> pl = new List<string>();
                     Process[] processlist = Process.GetProcesses();
                 
@@ -141,7 +141,7 @@ namespace etsrp
                     else
                     {
                         SystemSounds.Beep.Play();
-                        MessageBox.Show("No running ETS2 found! ❌");
+                        MessageBox.Show("No running ETS2 found!");
 
                     }
                 }
@@ -152,13 +152,30 @@ namespace etsrp
             }
             else if (button1.Text == "Stop RP")
             {
-                client.ClearPresence();
-                label1.Text = "ETSRP Status: Not Showing ❌";
-                label2.Text = "ETS Telemetry Server Connection Status: Connected ✅";
-                button1.Text = "Start RP";
+                try
+                {
+                    button1.Enabled = false;
+                    client.ClearPresence();
+                    client.OnClose += (sendero, e_o) =>
+                    {
+                        label1.Text = "ETSRP Status: Not Showing ❌";
+                        label1.ForeColor = Color.Red;
+                        button1.Text = "Start RP";
+                        button1.Enabled = true;
+                    };
+                    label1.Text = "ETSRP Status: Not Showing ❌";
+                    label2.Text = "ETS Telemetry Server Connection Status: Connected ✅";
                 
-                label1.ForeColor = Color.Red;
-                label2.ForeColor = Color.ForestGreen;
+                    label1.ForeColor = Color.Red;
+                    label2.ForeColor = Color.ForestGreen;
+                }
+                catch (DiscordRPC.Exceptions.UninitializedException exception)
+                {
+                    SystemSounds.Beep.Play();
+                    MessageBox.Show($"That didn't work! Please close the program to stop RP\n \n " +
+                                    $"Exception: {exception}");
+                    button1.Enabled = true;
+                }
             }
         }
             

@@ -33,6 +33,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -63,22 +64,33 @@
             this.label2.Size = new System.Drawing.Size(352, 27);
             this.label2.TabIndex = 2;
             this.label2.Text = "ETS Telemetry Connection Status:";
-            this.MaximizeBox = false;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(3, 429);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(187, 24);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Copyright MakufonSkifto, 2020 - 2021";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "ETSRP";
+            this.Text = "ETSRP v1.8";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Label label3;
 
         private System.Windows.Forms.Label label2;
 
