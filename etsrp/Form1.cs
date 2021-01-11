@@ -140,14 +140,15 @@ namespace etsrp
                     }
                     else
                     {
-                        SystemSounds.Beep.Play();
-                        MessageBox.Show("No running ETS2 found!");
+                        MessageBox.Show("No running ETS2 found!", "Error",
+                            MessageBoxButtons.OK ,MessageBoxIcon.Hand);
 
                     }
                 }
                 catch (WebException)
                 {
-                    MessageBox.Show("Please open the ETS Telemetry server in case to use this program!");
+                    MessageBox.Show("Please open the ETS Telemetry server in case to use this program!", "Error",
+                        MessageBoxButtons.OK ,MessageBoxIcon.Hand);
                 }
             }
             else if (button1.Text == "Stop RP")
@@ -171,9 +172,8 @@ namespace etsrp
                 }
                 catch (DiscordRPC.Exceptions.UninitializedException exception)
                 {
-                    SystemSounds.Beep.Play();
-                    MessageBox.Show($"That didn't work! Please close the program to stop RP\n \n " +
-                                    $"Exception: {exception}");
+                    MessageBox.Show($"That didn't work! Please close the program to stop RP\n \n" +
+                                    $"Exception: {exception}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     button1.Enabled = true;
                 }
             }
@@ -202,6 +202,5 @@ namespace etsrp
                 this.Close();
             }
         }
-        
     }
 }
