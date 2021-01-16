@@ -107,6 +107,7 @@ namespace etsrp
                 { 
                     string dist = null;
                 }
+                Console.WriteLine();
                 
                 bool alreadyExist = pl.Contains("eurotrucks2"); 
                 if (alreadyExist) 
@@ -116,13 +117,13 @@ namespace etsrp
                     
                     client.SetPresence(new RichPresence() 
                     {
-                        Details = "text", 
+                        Details = text, 
                         Timestamps = Timestamps.Now, 
-                        State = "dist", 
+                        State = dist, 
                         Assets = new Assets() 
                         {
                             LargeImageKey = "ets", 
-                            LargeImageText = "speed", 
+                            LargeImageText = speed, 
                             SmallImageText = "RP Mod by MakufonSkifto", 
                             SmallImageKey = "eu"
                         }
