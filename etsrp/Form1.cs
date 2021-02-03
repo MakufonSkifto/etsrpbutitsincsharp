@@ -54,61 +54,63 @@ namespace etsrp
                     pl.Add(theprocess.ProcessName);
                 }
 
+                string speed;
+                string text;
+                string dist;
                 
                 if (RoundNum(Int32.Parse(details["truck"]["speed"].ToString())) != 0 && 
                     details["truck"]["cruiseControlOn"].ToString() is "true")
                 { 
-                    string speed = 
+                    speed = 
                         $"Truck Speed: {RoundNum(Int32.Parse(details["truck"]["speed"].ToString()))} (Cruise Control)";
                 }
                 else if (RoundNum(Int32.Parse(details["truck"]["speed"].ToString())) == 0) 
                 { 
-                    string speed = "Truck Speed: Stopped";
+                    speed = "Truck Speed: Stopped";
                 }
                 else 
                 { 
-                    string speed = $"Truck Speed: {RoundNum(Int32.Parse(details["truck"]["speed"].ToString()))}";
+                    speed = $"Truck Speed: {RoundNum(Int32.Parse(details["truck"]["speed"].ToString()))}";
                 }
 
                 
                 if (details["game"]["paused"].ToString() is "true") 
                 { 
-                    string text = "Paused / Idle"; 
-                    string speed = null;
+                    text = "Paused / Idle"; 
+                    speed = null;
                 }
                 else if (details["truck"]["make"].ToString() != "" && 
                          details["job"]["destinationCity"].ToString() != "")
                 { 
-                    string text = 
+                    text = 
                         $"Driving with {details["truck"]["make"]} {details["truck"]["model"]} to {details["job"]["destinationCity"]}";
                 }
                 else if (details["game"]["paused"].ToString() is "false") 
                 { 
-                    string text = $"Driving with {details["truck"]["make"]} {details["truck"]["model"]}";
+                    text = $"Driving with {details["truck"]["make"]} {details["truck"]["model"]}";
                 }
                 else 
                 { 
                     Random rand = new Random(); 
                     string[] list = {"in Europe", "with some truck"}; 
                     int index = rand.Next(0, list.Length); 
-                    string text = $"Driving {list[index]}";
+                    text = $"Driving {list[index]}";
                 }
                 
                 if (details["game"]["paused"].ToString() is "true") 
                 { 
-                    string dist = null;
+                    dist = null;
                 }
                 else if (Int32.Parse(details["navigation"]["estimatedDistance"].ToString()) != 0) 
                 { 
-                    string dist = 
+                    dist = 
                         $"Estimated Distance: {RoundNum(Int32.Parse(details["navigation"]["estimatedDistance"].ToString()) / 1000):n}km";
                 }
                 else 
                 { 
-                    string dist = null;
+                    dist = null;
                 }
-                Console.WriteLine();
-                
+
                 bool alreadyExist = pl.Contains("eurotrucks2"); 
                 if (alreadyExist) 
                 { 
